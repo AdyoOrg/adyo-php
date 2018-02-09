@@ -1,0 +1,6 @@
+# Mac Related
+.DS_Store
+
+# Ignore composer related files
+/vendor/
+composer.lock

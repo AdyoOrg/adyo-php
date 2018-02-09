@@ -1,0 +1,38 @@
+{
+    "name": "adyo/adyo-php",
+    "description": "PHP Bindings Library for the Adyo Management & Analytics API.",
+    "version": "1.0.0",
+    "homepage" : "http://github.com/AdyoOrg/adyo-php",
+    "authors" : [
+        {
+            "name" : "UnitX (Pty) Ltd.",
+            "email" : "devops@unitx.co.za",
+            "homepage" : "http://www.unitx.co.za"
+        }
+    ],
+    "keywords": [
+        "api",
+        "adyo",
+        "php"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adyo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+          "tests/"
+        ]
+    },
+    "minimum-stability": "stable"
+}
