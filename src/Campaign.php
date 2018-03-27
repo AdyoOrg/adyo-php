@@ -25,6 +25,32 @@ class Campaign extends ApiResource
       'created_at',
       'updated_at',
 
+      // Counters
+      'lifetime_impressions', 
+      'monthly_impressions', 
+      'daily_impressions', 
+      'hourly_impressions', 
+      'unique_lifetime_impressions', 
+      'unique_monthly_impressions', 
+      'unique_daily_impressions', 
+      'unique_hourly_impressions', 
+      'lifetime_clicks', 
+      'monthly_clicks', 
+      'daily_clicks', 
+      'hourly_clicks', 
+      'unique_lifetime_clicks', 
+      'unique_monthly_clicks', 
+      'unique_daily_clicks', 
+      'unique_hourly_clicks',  
+      'lifetime_ctr', 
+      'monthly_ctr', 
+      'daily_ctr', 
+      'hourly_ctr', 
+      'unique_lifetime_ctr', 
+      'unique_monthly_ctr', 
+      'unique_daily_ctr', 
+      'unique_hourly_ctr',
+
       // Expanded Objects
       'advertiser',
     ];

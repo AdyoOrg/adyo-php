@@ -21,11 +21,35 @@ class CampaignTest extends TestCase {
     {   
         // Setup mock response
         $responseBody = [
-            'id'            => 1,
-            'advertiser_id' => 1,
-            'name'          => 'The Campaign',
-            'created_at'    => '2017-10-04T12:57:18Z',
-            'updated_at'    => '2017-10-04T12:57:18Z'
+            'id'                            => 1,
+            'advertiser_id'                 => 1,
+            'name'                          => 'The Campaign',
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-04T12:57:18Z',
+            'updated_at'                    => '2017-10-04T12:57:18Z'
         ];
 
         $mock = new MockHandler([
@@ -46,6 +70,30 @@ class CampaignTest extends TestCase {
         $this->assertSame($campaign->id, 1);
         $this->assertSame($campaign->advertiser_id, 1);
         $this->assertSame($campaign->name, 'The Campaign');
+        $this->assertSame($campaign->lifetime_impressions, 1); 
+        $this->assertSame($campaign->monthly_impressions, 1); 
+        $this->assertSame($campaign->daily_impressions, 1); 
+        $this->assertSame($campaign->hourly_impressions, 1); 
+        $this->assertSame($campaign->unique_lifetime_impressions, 1); 
+        $this->assertSame($campaign->unique_monthly_impressions, 1); 
+        $this->assertSame($campaign->unique_daily_impressions, 1); 
+        $this->assertSame($campaign->unique_hourly_impressions, 1); 
+        $this->assertSame($campaign->lifetime_clicks, 1); 
+        $this->assertSame($campaign->monthly_clicks, 1); 
+        $this->assertSame($campaign->daily_clicks, 1); 
+        $this->assertSame($campaign->hourly_clicks, 1); 
+        $this->assertSame($campaign->unique_lifetime_clicks, 1); 
+        $this->assertSame($campaign->unique_monthly_clicks, 1); 
+        $this->assertSame($campaign->unique_daily_clicks, 1); 
+        $this->assertSame($campaign->unique_hourly_clicks, 1); 
+        $this->assertSame($campaign->lifetime_ctr, 100); 
+        $this->assertSame($campaign->monthly_ctr, 100); 
+        $this->assertSame($campaign->daily_ctr, 100); 
+        $this->assertSame($campaign->hourly_ctr, 100); 
+        $this->assertSame($campaign->unique_lifetime_ctr, 100); 
+        $this->assertSame($campaign->unique_monthly_ctr, 100); 
+        $this->assertSame($campaign->unique_daily_ctr, 100); 
+        $this->assertSame($campaign->unique_hourly_ctr, 100);
         $this->assertSame($campaign->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($campaign->updated_at, '2017-10-04T12:57:18Z');
     }
@@ -59,11 +107,35 @@ class CampaignTest extends TestCase {
     {   
         // Setup mock response
         $responseBody = [
-            'id'            => 1,
-            'advertiser_id' => 1,
-            'name'          => 'The Campaign',
-            'created_at'    => '2017-10-04T12:57:18Z',
-            'updated_at'    => '2017-10-04T12:57:18Z'
+            'id'                            => 1,
+            'advertiser_id'                 => 1,
+            'name'                          => 'The Campaign',
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-04T12:57:18Z',
+            'updated_at'                    => '2017-10-04T12:57:18Z'
         ];
 
         $mock = new MockHandler([
@@ -84,6 +156,30 @@ class CampaignTest extends TestCase {
         $this->assertSame($campaign->id, 1);
         $this->assertSame($campaign->advertiser_id, 1);
         $this->assertSame($campaign->name, 'The Campaign');
+        $this->assertSame($campaign->lifetime_impressions, 1); 
+        $this->assertSame($campaign->monthly_impressions, 1); 
+        $this->assertSame($campaign->daily_impressions, 1); 
+        $this->assertSame($campaign->hourly_impressions, 1); 
+        $this->assertSame($campaign->unique_lifetime_impressions, 1); 
+        $this->assertSame($campaign->unique_monthly_impressions, 1); 
+        $this->assertSame($campaign->unique_daily_impressions, 1); 
+        $this->assertSame($campaign->unique_hourly_impressions, 1); 
+        $this->assertSame($campaign->lifetime_clicks, 1); 
+        $this->assertSame($campaign->monthly_clicks, 1); 
+        $this->assertSame($campaign->daily_clicks, 1); 
+        $this->assertSame($campaign->hourly_clicks, 1); 
+        $this->assertSame($campaign->unique_lifetime_clicks, 1); 
+        $this->assertSame($campaign->unique_monthly_clicks, 1); 
+        $this->assertSame($campaign->unique_daily_clicks, 1); 
+        $this->assertSame($campaign->unique_hourly_clicks, 1); 
+        $this->assertSame($campaign->lifetime_ctr, 100); 
+        $this->assertSame($campaign->monthly_ctr, 100); 
+        $this->assertSame($campaign->daily_ctr, 100); 
+        $this->assertSame($campaign->hourly_ctr, 100); 
+        $this->assertSame($campaign->unique_lifetime_ctr, 100); 
+        $this->assertSame($campaign->unique_monthly_ctr, 100); 
+        $this->assertSame($campaign->unique_daily_ctr, 100); 
+        $this->assertSame($campaign->unique_hourly_ctr, 100);
         $this->assertSame($campaign->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($campaign->updated_at, '2017-10-04T12:57:18Z');
     }
@@ -99,18 +195,66 @@ class CampaignTest extends TestCase {
         $responseBody = [
             'data' => [
                 [
-                    'id'            => 1,
-                    'advertiser_id' => 1,
-                    'name'          => 'The Campaign',
-                    'created_at'    => '2017-10-04T12:57:18Z',
-                    'updated_at'    => '2017-10-04T12:57:18Z'
+                    'id'                            => 1,
+                    'advertiser_id'                 => 1,
+                    'name'                          => 'The Campaign',
+                    'lifetime_impressions'          => 1, 
+                    'monthly_impressions'           => 1, 
+                    'daily_impressions'             => 1, 
+                    'hourly_impressions'            => 1, 
+                    'unique_lifetime_impressions'   => 1, 
+                    'unique_monthly_impressions'    => 1, 
+                    'unique_daily_impressions'      => 1, 
+                    'unique_hourly_impressions'     => 1, 
+                    'lifetime_clicks'               => 1, 
+                    'monthly_clicks'                => 1, 
+                    'daily_clicks'                  => 1, 
+                    'hourly_clicks'                 => 1, 
+                    'unique_lifetime_clicks'        => 1, 
+                    'unique_monthly_clicks'         => 1, 
+                    'unique_daily_clicks'           => 1, 
+                    'unique_hourly_clicks'          => 1,  
+                    'lifetime_ctr'                  => 100, 
+                    'monthly_ctr'                   => 100, 
+                    'daily_ctr'                     => 100, 
+                    'hourly_ctr'                    => 100, 
+                    'unique_lifetime_ctr'           => 100, 
+                    'unique_monthly_ctr'            => 100, 
+                    'unique_daily_ctr'              => 100, 
+                    'unique_hourly_ctr'             => 100,
+                    'created_at'                    => '2017-10-04T12:57:18Z',
+                    'updated_at'                    => '2017-10-04T12:57:18Z'
                 ],
                 [
-                    'id'            => 2,
-                    'advertiser_id' => 1,
-                    'name'          => 'The Campaign 2',
-                    'created_at'    => '2017-10-04T12:57:18Z',
-                    'updated_at'    => '2017-10-04T12:57:18Z'
+                    'id'                            => 2,
+                    'advertiser_id'                 => 1,
+                    'lifetime_impressions'          => 1, 
+                    'monthly_impressions'           => 1, 
+                    'daily_impressions'             => 1, 
+                    'hourly_impressions'            => 1, 
+                    'unique_lifetime_impressions'   => 1, 
+                    'unique_monthly_impressions'    => 1, 
+                    'unique_daily_impressions'      => 1, 
+                    'unique_hourly_impressions'     => 1, 
+                    'lifetime_clicks'               => 1, 
+                    'monthly_clicks'                => 1, 
+                    'daily_clicks'                  => 1, 
+                    'hourly_clicks'                 => 1, 
+                    'unique_lifetime_clicks'        => 1, 
+                    'unique_monthly_clicks'         => 1, 
+                    'unique_daily_clicks'           => 1, 
+                    'unique_hourly_clicks'          => 1,  
+                    'lifetime_ctr'                  => 100, 
+                    'monthly_ctr'                   => 100, 
+                    'daily_ctr'                     => 100, 
+                    'hourly_ctr'                    => 100, 
+                    'unique_lifetime_ctr'           => 100, 
+                    'unique_monthly_ctr'            => 100, 
+                    'unique_daily_ctr'              => 100, 
+                    'unique_hourly_ctr'             => 100,
+                    'name'                          => 'The Campaign 2',
+                    'created_at'                    => '2017-10-04T12:57:18Z',
+                    'updated_at'                    => '2017-10-04T12:57:18Z'
                 ]
             ],
             'pagination' => [
@@ -158,6 +302,30 @@ class CampaignTest extends TestCase {
         $this->assertSame($list->objects[0]->id, 1);
         $this->assertSame($list->objects[0]->advertiser_id, 1);
         $this->assertSame($list->objects[0]->name, 'The Campaign');
+        $this->assertSame($list->objects[0]->lifetime_impressions, 1); 
+        $this->assertSame($list->objects[0]->monthly_impressions, 1); 
+        $this->assertSame($list->objects[0]->daily_impressions, 1); 
+        $this->assertSame($list->objects[0]->hourly_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_lifetime_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_monthly_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_daily_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_hourly_impressions, 1); 
+        $this->assertSame($list->objects[0]->lifetime_clicks, 1); 
+        $this->assertSame($list->objects[0]->monthly_clicks, 1); 
+        $this->assertSame($list->objects[0]->daily_clicks, 1); 
+        $this->assertSame($list->objects[0]->hourly_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_lifetime_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_monthly_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_daily_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_hourly_clicks, 1); 
+        $this->assertSame($list->objects[0]->lifetime_ctr, 100); 
+        $this->assertSame($list->objects[0]->monthly_ctr, 100); 
+        $this->assertSame($list->objects[0]->daily_ctr, 100); 
+        $this->assertSame($list->objects[0]->hourly_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_lifetime_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_monthly_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_daily_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_hourly_ctr, 100);
         $this->assertSame($list->objects[0]->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($list->objects[0]->updated_at, '2017-10-04T12:57:18Z');
 
@@ -165,6 +333,30 @@ class CampaignTest extends TestCase {
         $this->assertSame($list->objects[1]->id, 2);
         $this->assertSame($list->objects[0]->advertiser_id, 1);
         $this->assertSame($list->objects[1]->name, 'The Campaign 2');
+        $this->assertSame($list->objects[1]->lifetime_impressions, 1); 
+        $this->assertSame($list->objects[1]->monthly_impressions, 1); 
+        $this->assertSame($list->objects[1]->daily_impressions, 1); 
+        $this->assertSame($list->objects[1]->hourly_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_lifetime_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_monthly_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_daily_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_hourly_impressions, 1); 
+        $this->assertSame($list->objects[1]->lifetime_clicks, 1); 
+        $this->assertSame($list->objects[1]->monthly_clicks, 1); 
+        $this->assertSame($list->objects[1]->daily_clicks, 1); 
+        $this->assertSame($list->objects[1]->hourly_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_lifetime_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_monthly_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_daily_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_hourly_clicks, 1); 
+        $this->assertSame($list->objects[1]->lifetime_ctr, 100); 
+        $this->assertSame($list->objects[1]->monthly_ctr, 100); 
+        $this->assertSame($list->objects[1]->daily_ctr, 100); 
+        $this->assertSame($list->objects[1]->hourly_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_lifetime_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_monthly_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_daily_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_hourly_ctr, 100);
         $this->assertSame($list->objects[1]->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($list->objects[1]->updated_at, '2017-10-04T12:57:18Z');
     }
@@ -178,19 +370,67 @@ class CampaignTest extends TestCase {
     {
         // Setup mock responses
         $responseBody = [
-            'id'            => 1,
-            'advertiser_id' => 1,
-            'name'          => 'Campaign Name',
-            'created_at'    => '2017-10-04T12:57:18Z',
-            'updated_at'    => '2017-10-04T12:57:18Z'
+            'id'                            => 1,
+            'advertiser_id'                 => 1,
+            'name'                          => 'Campaign Name',
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-04T12:57:18Z',
+            'updated_at'                    => '2017-10-04T12:57:18Z'
         ];
 
         $responseBody2 = [
-            'id'            => 1,
-            'advertiser_id' => 1,
-            'name'          => 'Updated Name',
-            'created_at'    => '2017-10-04T12:58:18Z',
-            'updated_at'    => '2017-10-04T12:58:18Z'
+            'id'                            => 1,
+            'advertiser_id'                 => 1,
+            'name'                          => 'Updated Name',
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-04T12:58:18Z',
+            'updated_at'                    => '2017-10-04T12:58:18Z'
         ];
 
         $mock = new MockHandler([
@@ -216,6 +456,30 @@ class CampaignTest extends TestCase {
         $this->assertSame($campaign->id, 1);
         $this->assertSame($campaign->advertiser_id, 1);
         $this->assertSame($campaign->name, 'Updated Name');
+        $this->assertSame($campaign->lifetime_impressions, 1); 
+        $this->assertSame($campaign->monthly_impressions, 1); 
+        $this->assertSame($campaign->daily_impressions, 1); 
+        $this->assertSame($campaign->hourly_impressions, 1); 
+        $this->assertSame($campaign->unique_lifetime_impressions, 1); 
+        $this->assertSame($campaign->unique_monthly_impressions, 1); 
+        $this->assertSame($campaign->unique_daily_impressions, 1); 
+        $this->assertSame($campaign->unique_hourly_impressions, 1); 
+        $this->assertSame($campaign->lifetime_clicks, 1); 
+        $this->assertSame($campaign->monthly_clicks, 1); 
+        $this->assertSame($campaign->daily_clicks, 1); 
+        $this->assertSame($campaign->hourly_clicks, 1); 
+        $this->assertSame($campaign->unique_lifetime_clicks, 1); 
+        $this->assertSame($campaign->unique_monthly_clicks, 1); 
+        $this->assertSame($campaign->unique_daily_clicks, 1); 
+        $this->assertSame($campaign->unique_hourly_clicks, 1); 
+        $this->assertSame($campaign->lifetime_ctr, 100); 
+        $this->assertSame($campaign->monthly_ctr, 100); 
+        $this->assertSame($campaign->daily_ctr, 100); 
+        $this->assertSame($campaign->hourly_ctr, 100); 
+        $this->assertSame($campaign->unique_lifetime_ctr, 100); 
+        $this->assertSame($campaign->unique_monthly_ctr, 100); 
+        $this->assertSame($campaign->unique_daily_ctr, 100); 
+        $this->assertSame($campaign->unique_hourly_ctr, 100);
         $this->assertSame($campaign->created_at, '2017-10-04T12:58:18Z');
         $this->assertSame($campaign->updated_at, '2017-10-04T12:58:18Z');
     }
@@ -229,11 +493,35 @@ class CampaignTest extends TestCase {
     {
         // Setup mock responses
         $responseBody = [
-            'id'            => 1,
-            'advertiser_id' => 1,
-            'name'          => 'Campaign Name',
-            'created_at'    => '2017-10-04T12:57:18Z',
-            'updated_at'    => '2017-10-04T12:57:18Z'
+            'id'                            => 1,
+            'advertiser_id'                 => 1,
+            'name'                          => 'Campaign Name',
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-04T12:57:18Z',
+            'updated_at'                    => '2017-10-04T12:57:18Z'
         ];
 
         $responseBody2 = [
@@ -264,6 +552,30 @@ class CampaignTest extends TestCase {
         $this->assertTrue($campaign->isDeleted);
         $this->assertFalse(property_exists($campaign, 'advertiser_id'));
         $this->assertFalse(property_exists($campaign, 'name'));
+        $this->assertFalse(property_exists($campaign, 'lifetime_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'monthly_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'daily_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'hourly_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'unique_lifetime_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'unique_monthly_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'unique_daily_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'unique_hourly_impressions')); 
+        $this->assertFalse(property_exists($campaign, 'lifetime_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'monthly_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'daily_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'hourly_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'unique_lifetime_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'unique_monthly_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'unique_daily_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'unique_hourly_clicks')); 
+        $this->assertFalse(property_exists($campaign, 'lifetime_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'monthly_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'daily_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'hourly_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'unique_lifetime_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'unique_monthly_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'unique_daily_ctr')); 
+        $this->assertFalse(property_exists($campaign, 'unique_hourly_ctr'));
         $this->assertFalse(property_exists($campaign, 'created_at'));
         $this->assertFalse(property_exists($campaign, 'updated_at'));
     }

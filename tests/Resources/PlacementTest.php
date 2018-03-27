@@ -21,44 +21,68 @@ class PlacementTest extends TestCase {
     {   
         // Setup mock response
         $responseBody = [
-            'id'                        => 1,
-            'campaign_id'               => 1,
-            'priority_id'               => 1,
-            'creative_ids'              => [1],
-            'name'                      => 'The Placement',
-            'enabled'                   => true,
-            'html_target'               => '_blank',
-            'app_target'                => 'default',
-            'delivery_method'           => 'default',
-            'lifetime_dates_enabled'    => true,
-            'lifetime_start'            => '2017-10-02T12:04:34Z',
-            'lifetime_end'              => '2017-10-02T14:51:14Z',
-            'lifetime_quota_enabled'    => true,
-            'lifetime_quota_amount'     => 32,
-            'lifetime_quota_type'       => 'views',
-            'under_delivery_behaviour'  => 'endOnDate',
-            'pricing_enabled'           => true,
-            'pricing_method'            => 'rate',
-            'rate_cpm'                  => 1.25,
-            'rate_cpc'                  => 2.22,
-            'rate_cpa'                  => 3.33,
-            'fixed_cost'                => null,
-            'publisher_payout_ratio'    => null,
-            'per_user_limit_enabled'    => true,
-            'per_user_limit_amount'     => 2000,
-            'per_user_limit_type'       => 'views',
-            'per_user_limit_period'     => 'hour',
-            'frequency_limit_enabled'   => true,
-            'frequency_limit_amount'    => 30000,
-            'frequency_limit_type'      => 'views',
-            'frequency_limit_period'    => 'day',
-            'keywords'                  => 'audi,bmw,cars,-train',
-            'keyword_match_method'      => 'preferred',
-            'zone_ids'                  => [99],
-            'zone_group_ids'            => [21],
-            'zone_all_ids'              => [1, 99],
-            'created_at'                => '2017-10-02T12:04:36Z',
-            'updated_at'                => '2017-10-02T12:04:36Z'
+            'id'                            => 1,
+            'campaign_id'                   => 1,
+            'priority_id'                   => 1,
+            'creative_ids'                  => [1],
+            'name'                          => 'The Placement',
+            'enabled'                       => true,
+            'html_target'                   => '_blank',
+            'app_target'                    => 'default',
+            'delivery_method'               => 'default',
+            'lifetime_dates_enabled'        => true,
+            'lifetime_start'                => '2017-10-02T12:04:34Z',
+            'lifetime_end'                  => '2017-10-02T14:51:14Z',
+            'lifetime_quota_enabled'        => true,
+            'lifetime_quota_amount'         => 32,
+            'lifetime_quota_type'           => 'impressions',
+            'under_delivery_behaviour'      => 'endOnDate',
+            'pricing_enabled'               => true,
+            'pricing_method'                => 'rate',
+            'rate_cpm'                      => 1.25,
+            'rate_cpc'                      => 2.22,
+            'rate_cpa'                      => 3.33,
+            'fixed_cost'                    => null,
+            'publisher_payout_ratio'        => null,
+            'per_user_limit_enabled'        => true,
+            'per_user_limit_amount'         => 2000,
+            'per_user_limit_type'           => 'impressions',
+            'per_user_limit_period'         => 'hour',
+            'frequency_limit_enabled'       => true,
+            'frequency_limit_amount'        => 30000,
+            'frequency_limit_type'          => 'impressions',
+            'frequency_limit_period'        => 'day',
+            'keywords'                      => 'audi,bmw,cars,-train',
+            'keyword_match_method'          => 'preferred',
+            'zone_ids'                      => [99],
+            'zone_group_ids'                => [21],
+            'zone_all_ids'                  => [1, 99],
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-02T12:04:36Z',
+            'updated_at'                    => '2017-10-02T12:04:36Z'
         ];
 
         $mock = new MockHandler([
@@ -86,7 +110,7 @@ class PlacementTest extends TestCase {
             'lifetime_end'              => '2017-10-02T14:51:14Z',
             'lifetime_quota_enabled'    => true,
             'lifetime_quota_amount'     => 32,
-            'lifetime_quota_type'       => 'views',
+            'lifetime_quota_type'       => 'impressions',
             'under_delivery_behaviour'  => 'endOnDate',
             'pricing_enabled'           => true,
             'pricing_method'            => 'rate',
@@ -96,11 +120,11 @@ class PlacementTest extends TestCase {
             'publisher_payout_ratio'    => null,
             'per_user_limit_enabled'    => true,
             'per_user_limit_amount'     => 2000,
-            'per_user_limit_type'       => 'views',
+            'per_user_limit_type'       => 'impressions',
             'per_user_limit_period'     => 'hour',
             'frequency_limit_enabled'   => true,
             'frequency_limit_amount'    => 30000,
-            'frequency_limit_type'      => 'views',
+            'frequency_limit_type'      => 'impressions',
             'frequency_limit_period'    => 'day',
             'keywords'                  => 'audi,bmw,cars,-train',
             'keyword_match_method'      => 'preferred',
@@ -124,7 +148,7 @@ class PlacementTest extends TestCase {
         $this->assertSame($placement->lifetime_end, '2017-10-02T14:51:14Z');
         $this->assertTrue($placement->lifetime_quota_enabled);
         $this->assertSame($placement->lifetime_quota_amount, 32);
-        $this->assertSame($placement->lifetime_quota_type, 'views');
+        $this->assertSame($placement->lifetime_quota_type, 'impressions');
         $this->assertSame($placement->under_delivery_behaviour, 'endOnDate');
         $this->assertTrue($placement->pricing_enabled);
         $this->assertSame($placement->pricing_method, 'rate');
@@ -134,11 +158,11 @@ class PlacementTest extends TestCase {
         $this->assertNull($placement->publisher_payout_ratio);
         $this->assertTrue($placement->per_user_limit_enabled);
         $this->assertSame($placement->per_user_limit_amount, 2000);
-        $this->assertSame($placement->per_user_limit_type, 'views');
+        $this->assertSame($placement->per_user_limit_type, 'impressions');
         $this->assertSame($placement->per_user_limit_period, 'hour');
         $this->assertTrue($placement->frequency_limit_enabled);
         $this->assertSame($placement->frequency_limit_amount, 30000);
-        $this->assertSame($placement->frequency_limit_type, 'views');
+        $this->assertSame($placement->frequency_limit_type, 'impressions');
         $this->assertSame($placement->frequency_limit_period, 'day');
         $this->assertSame($placement->keywords, 'audi,bmw,cars,-train');
         $this->assertSame($placement->keyword_match_method, 'preferred');
@@ -152,6 +176,30 @@ class PlacementTest extends TestCase {
         $this->assertSame(count($placement->zone_all_ids), 2);
         $this->assertSame($placement->zone_all_ids[0], 1);
         $this->assertSame($placement->zone_all_ids[1], 99);
+        $this->assertSame($placement->lifetime_impressions, 1); 
+        $this->assertSame($placement->monthly_impressions, 1); 
+        $this->assertSame($placement->daily_impressions, 1); 
+        $this->assertSame($placement->hourly_impressions, 1); 
+        $this->assertSame($placement->unique_lifetime_impressions, 1); 
+        $this->assertSame($placement->unique_monthly_impressions, 1); 
+        $this->assertSame($placement->unique_daily_impressions, 1); 
+        $this->assertSame($placement->unique_hourly_impressions, 1); 
+        $this->assertSame($placement->lifetime_clicks, 1); 
+        $this->assertSame($placement->monthly_clicks, 1); 
+        $this->assertSame($placement->daily_clicks, 1); 
+        $this->assertSame($placement->hourly_clicks, 1); 
+        $this->assertSame($placement->unique_lifetime_clicks, 1); 
+        $this->assertSame($placement->unique_monthly_clicks, 1); 
+        $this->assertSame($placement->unique_daily_clicks, 1); 
+        $this->assertSame($placement->unique_hourly_clicks, 1); 
+        $this->assertSame($placement->lifetime_ctr, 100); 
+        $this->assertSame($placement->monthly_ctr, 100); 
+        $this->assertSame($placement->daily_ctr, 100); 
+        $this->assertSame($placement->hourly_ctr, 100); 
+        $this->assertSame($placement->unique_lifetime_ctr, 100); 
+        $this->assertSame($placement->unique_monthly_ctr, 100); 
+        $this->assertSame($placement->unique_daily_ctr, 100); 
+        $this->assertSame($placement->unique_hourly_ctr, 100);
         $this->assertSame($placement->created_at, '2017-10-02T12:04:36Z');
         $this->assertSame($placement->updated_at, '2017-10-02T12:04:36Z');
     }
@@ -165,44 +213,68 @@ class PlacementTest extends TestCase {
     {   
         // Setup mock response
         $responseBody = [
-            'id'                        => 1,
-            'campaign_id'               => 1,
-            'priority_id'               => 1,
-            'creative_ids'              => [1],
-            'name'                      => 'The Placement',
-            'enabled'                   => false,
-            'html_target'               => '_blank',
-            'app_target'                => 'default',
-            'delivery_method'           => 'default',
-            'lifetime_dates_enabled'    => true,
-            'lifetime_start'            => '2017-10-02T12:04:34Z',
-            'lifetime_end'              => '2017-10-02T14:51:14Z',
-            'lifetime_quota_enabled'    => true,
-            'lifetime_quota_amount'     => 32,
-            'lifetime_quota_type'       => 'views',
-            'under_delivery_behaviour'  => 'endOnDate',
-            'pricing_enabled'           => true,
-            'pricing_method'            => 'fixed',
-            'rate_cpm'                  => null,
-            'rate_cpc'                  => null,
-            'rate_cpa'                  => null,
-            'fixed_cost'                => 5000.50,
-            'publisher_payout_ratio'    => null,
-            'per_user_limit_enabled'    => true,
-            'per_user_limit_amount'     => 2000,
-            'per_user_limit_type'       => 'views',
-            'per_user_limit_period'     => 'hour',
-            'frequency_limit_enabled'   => true,
-            'frequency_limit_amount'    => 30000,
-            'frequency_limit_type'      => 'clicks',
-            'frequency_limit_period'    => 'day',
-            'keywords'                  => 'audi,bmw,cars,-train',
-            'keyword_match_method'      => 'required',
-            'zone_ids'                  => [99],
-            'zone_group_ids'            => [21],
-            'zone_all_ids'              => [1, 99],
-            'created_at'                => '2017-10-02T12:04:36Z',
-            'updated_at'                => '2017-10-02T12:04:36Z'
+            'id'                            => 1,
+            'campaign_id'                   => 1,
+            'priority_id'                   => 1,
+            'creative_ids'                  => [1],
+            'name'                          => 'The Placement',
+            'enabled'                       => false,
+            'html_target'                   => '_blank',
+            'app_target'                    => 'default',
+            'delivery_method'               => 'default',
+            'lifetime_dates_enabled'        => true,
+            'lifetime_start'                => '2017-10-02T12:04:34Z',
+            'lifetime_end'                  => '2017-10-02T14:51:14Z',
+            'lifetime_quota_enabled'        => true,
+            'lifetime_quota_amount'         => 32,
+            'lifetime_quota_type'           => 'impressions',
+            'under_delivery_behaviour'      => 'endOnDate',
+            'pricing_enabled'               => true,
+            'pricing_method'                => 'fixed',
+            'rate_cpm'                      => null,
+            'rate_cpc'                      => null,
+            'rate_cpa'                      => null,
+            'fixed_cost'                    => 5000.50,
+            'publisher_payout_ratio'        => null,
+            'per_user_limit_enabled'        => true,
+            'per_user_limit_amount'         => 2000,
+            'per_user_limit_type'           => 'impressions',
+            'per_user_limit_period'         => 'hour',
+            'frequency_limit_enabled'       => true,
+            'frequency_limit_amount'        => 30000,
+            'frequency_limit_type'          => 'clicks',
+            'frequency_limit_period'        => 'day',
+            'keywords'                      => 'audi,bmw,cars,-train',
+            'keyword_match_method'          => 'required',
+            'zone_ids'                      => [99],
+            'zone_group_ids'                => [21],
+            'zone_all_ids'                  => [1, 99],
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-02T12:04:36Z',
+            'updated_at'                    => '2017-10-02T12:04:36Z'
         ];
 
         $mock = new MockHandler([
@@ -234,7 +306,7 @@ class PlacementTest extends TestCase {
         $this->assertSame($placement->lifetime_end, '2017-10-02T14:51:14Z');
         $this->assertTrue($placement->lifetime_quota_enabled);
         $this->assertSame($placement->lifetime_quota_amount, 32);
-        $this->assertSame($placement->lifetime_quota_type, 'views');
+        $this->assertSame($placement->lifetime_quota_type, 'impressions');
         $this->assertSame($placement->under_delivery_behaviour, 'endOnDate');
         $this->assertTrue($placement->pricing_enabled);
         $this->assertSame($placement->pricing_method, 'fixed');
@@ -242,7 +314,7 @@ class PlacementTest extends TestCase {
         $this->assertNull($placement->publisher_payout_ratio);
         $this->assertTrue($placement->per_user_limit_enabled);
         $this->assertSame($placement->per_user_limit_amount, 2000);
-        $this->assertSame($placement->per_user_limit_type, 'views');
+        $this->assertSame($placement->per_user_limit_type, 'impressions');
         $this->assertSame($placement->per_user_limit_period, 'hour');
         $this->assertTrue($placement->frequency_limit_enabled);
         $this->assertSame($placement->frequency_limit_amount, 30000);
@@ -260,6 +332,30 @@ class PlacementTest extends TestCase {
         $this->assertSame(count($placement->zone_all_ids), 2);
         $this->assertSame($placement->zone_all_ids[0], 1);
         $this->assertSame($placement->zone_all_ids[1], 99);
+        $this->assertSame($placement->lifetime_impressions, 1); 
+        $this->assertSame($placement->monthly_impressions, 1); 
+        $this->assertSame($placement->daily_impressions, 1); 
+        $this->assertSame($placement->hourly_impressions, 1); 
+        $this->assertSame($placement->unique_lifetime_impressions, 1); 
+        $this->assertSame($placement->unique_monthly_impressions, 1); 
+        $this->assertSame($placement->unique_daily_impressions, 1); 
+        $this->assertSame($placement->unique_hourly_impressions, 1); 
+        $this->assertSame($placement->lifetime_clicks, 1); 
+        $this->assertSame($placement->monthly_clicks, 1); 
+        $this->assertSame($placement->daily_clicks, 1); 
+        $this->assertSame($placement->hourly_clicks, 1); 
+        $this->assertSame($placement->unique_lifetime_clicks, 1); 
+        $this->assertSame($placement->unique_monthly_clicks, 1); 
+        $this->assertSame($placement->unique_daily_clicks, 1); 
+        $this->assertSame($placement->unique_hourly_clicks, 1); 
+        $this->assertSame($placement->lifetime_ctr, 100); 
+        $this->assertSame($placement->monthly_ctr, 100); 
+        $this->assertSame($placement->daily_ctr, 100); 
+        $this->assertSame($placement->hourly_ctr, 100); 
+        $this->assertSame($placement->unique_lifetime_ctr, 100); 
+        $this->assertSame($placement->unique_monthly_ctr, 100); 
+        $this->assertSame($placement->unique_daily_ctr, 100); 
+        $this->assertSame($placement->unique_hourly_ctr, 100);
         $this->assertSame($placement->created_at, '2017-10-02T12:04:36Z');
         $this->assertSame($placement->updated_at, '2017-10-02T12:04:36Z');
     }
@@ -275,84 +371,132 @@ class PlacementTest extends TestCase {
         $responseBody = [
             'data' => [
                 [
-                    'id'                        => 1,
-                    'campaign_id'               => 1,
-                    'priority_id'               => 1,
-                    'creative_ids'              => [1],
-                    'name'                      => 'The Placement',
-                    'enabled'                   => true,
-                    'html_target'               => '_blank',
-                    'app_target'                => 'default',
-                    'delivery_method'           => 'default',
-                    'lifetime_dates_enabled'    => true,
-                    'lifetime_start'            => '2017-10-02T12:04:34Z',
-                    'lifetime_end'              => '2017-10-02T14:51:14Z',
-                    'lifetime_quota_enabled'    => true,
-                    'lifetime_quota_amount'     => 32,
-                    'lifetime_quota_type'       => 'views',
-                    'under_delivery_behaviour'  => 'endOnDate',
-                    'pricing_enabled'           => true,
-                    'pricing_method'            => 'rate',
-                    'rate_cpm'                  => 1.25,
-                    'rate_cpc'                  => 2.22,
-                    'rate_cpa'                  => 3.33,
-                    'fixed_cost'                => null,
-                    'publisher_payout_ratio'    => null,
-                    'per_user_limit_enabled'    => true,
-                    'per_user_limit_amount'     => 2000,
-                    'per_user_limit_type'       => 'views',
-                    'per_user_limit_period'     => 'hour',
-                    'frequency_limit_enabled'   => true,
-                    'frequency_limit_amount'    => 30000,
-                    'frequency_limit_type'      => 'views',
-                    'frequency_limit_period'    => 'day',
-                    'keywords'                  => 'audi,bmw,cars,-train',
-                    'keyword_match_method'      => 'preferred',
-                    'zone_ids'                  => [99],
-                    'zone_group_ids'            => [21],
-                    'zone_all_ids'              => [1, 99],
-                    'created_at'                => '2017-10-02T12:04:36Z',
-                    'updated_at'                => '2017-10-02T12:04:36Z'
+                    'id'                            => 1,
+                    'campaign_id'                   => 1,
+                    'priority_id'                   => 1,
+                    'creative_ids'                  => [1],
+                    'name'                          => 'The Placement',
+                    'enabled'                       => true,
+                    'html_target'                   => '_blank',
+                    'app_target'                    => 'default',
+                    'delivery_method'               => 'default',
+                    'lifetime_dates_enabled'        => true,
+                    'lifetime_start'                => '2017-10-02T12:04:34Z',
+                    'lifetime_end'                  => '2017-10-02T14:51:14Z',
+                    'lifetime_quota_enabled'        => true,
+                    'lifetime_quota_amount'         => 32,
+                    'lifetime_quota_type'           => 'impressions',
+                    'under_delivery_behaviour'      => 'endOnDate',
+                    'pricing_enabled'               => true,
+                    'pricing_method'                => 'rate',
+                    'rate_cpm'                      => 1.25,
+                    'rate_cpc'                      => 2.22,
+                    'rate_cpa'                      => 3.33,
+                    'fixed_cost'                    => null,
+                    'publisher_payout_ratio'        => null,
+                    'per_user_limit_enabled'        => true,
+                    'per_user_limit_amount'         => 2000,
+                    'per_user_limit_type'           => 'impressions',
+                    'per_user_limit_period'         => 'hour',
+                    'frequency_limit_enabled'       => true,
+                    'frequency_limit_amount'        => 30000,
+                    'frequency_limit_type'          => 'impressions',
+                    'frequency_limit_period'        => 'day',
+                    'keywords'                      => 'audi,bmw,cars,-train',
+                    'keyword_match_method'          => 'preferred',
+                    'zone_ids'                      => [99],
+                    'zone_group_ids'                => [21],
+                    'zone_all_ids'                  => [1, 99],
+                    'lifetime_impressions'          => 1, 
+                    'monthly_impressions'           => 1, 
+                    'daily_impressions'             => 1, 
+                    'hourly_impressions'            => 1, 
+                    'unique_lifetime_impressions'   => 1, 
+                    'unique_monthly_impressions'    => 1, 
+                    'unique_daily_impressions'      => 1, 
+                    'unique_hourly_impressions'     => 1, 
+                    'lifetime_clicks'               => 1, 
+                    'monthly_clicks'                => 1, 
+                    'daily_clicks'                  => 1, 
+                    'hourly_clicks'                 => 1, 
+                    'unique_lifetime_clicks'        => 1, 
+                    'unique_monthly_clicks'         => 1, 
+                    'unique_daily_clicks'           => 1, 
+                    'unique_hourly_clicks'          => 1,  
+                    'lifetime_ctr'                  => 100, 
+                    'monthly_ctr'                   => 100, 
+                    'daily_ctr'                     => 100, 
+                    'hourly_ctr'                    => 100, 
+                    'unique_lifetime_ctr'           => 100, 
+                    'unique_monthly_ctr'            => 100, 
+                    'unique_daily_ctr'              => 100, 
+                    'unique_hourly_ctr'             => 100,
+                    'created_at'                    => '2017-10-02T12:04:36Z',
+                    'updated_at'                    => '2017-10-02T12:04:36Z'
                 ],
                 [
-                    'id'                        => 2,
-                    'campaign_id'               => 2,
-                    'priority_id'               => 2,
-                    'creative_ids'              => [2],
-                    'name'                      => 'The Placement',
-                    'enabled'                   => false,
-                    'html_target'               => '_blank',
-                    'app_target'                => 'default',
-                    'delivery_method'           => 'default',
-                    'lifetime_dates_enabled'    => true,
-                    'lifetime_start'            => '2017-10-02T12:04:34Z',
-                    'lifetime_end'              => '2017-10-02T14:51:14Z',
-                    'lifetime_quota_enabled'    => true,
-                    'lifetime_quota_amount'     => 32,
-                    'lifetime_quota_type'       => 'views',
-                    'under_delivery_behaviour'  => 'endOnDate',
-                    'pricing_enabled'           => true,
-                    'pricing_method'            => 'fixed',
-                    'rate_cpm'                  => null,
-                    'rate_cpc'                  => null,
-                    'rate_cpa'                  => null,
-                    'fixed_cost'                => 5000.50,
-                    'publisher_payout_ratio'    => null,
-                    'per_user_limit_enabled'    => true,
-                    'per_user_limit_amount'     => 2000,
-                    'per_user_limit_type'       => 'views',
-                    'per_user_limit_period'     => 'hour',
-                    'frequency_limit_enabled'   => true,
-                    'frequency_limit_amount'    => 30000,
-                    'frequency_limit_type'      => 'clicks',
-                    'frequency_limit_period'    => 'day',
-                    'keywords'                  => 'audi,bmw,cars,-train',
-                    'keyword_match_method'      => 'required',
-                    'zone_ids'                  => [99],
-                    'zone_group_ids'            => [21],
-                    'zone_all_ids'              => [1, 99],
-                    'created_at'                => '2017-10-02T11:04:36Z',
-                    'updated_at'                => '2017-10-02T11:04:36Z'
+                    'id'                            => 2,
+                    'campaign_id'                   => 2,
+                    'priority_id'                   => 2,
+                    'creative_ids'                  => [2],
+                    'name'                          => 'The Placement',
+                    'enabled'                       => false,
+                    'html_target'                   => '_blank',
+                    'app_target'                    => 'default',
+                    'delivery_method'               => 'default',
+                    'lifetime_dates_enabled'        => true,
+                    'lifetime_start'                => '2017-10-02T12:04:34Z',
+                    'lifetime_end'                  => '2017-10-02T14:51:14Z',
+                    'lifetime_quota_enabled'        => true,
+                    'lifetime_quota_amount'         => 32,
+                    'lifetime_quota_type'           => 'impressions',
+                    'under_delivery_behaviour'      => 'endOnDate',
+                    'pricing_enabled'               => true,
+                    'pricing_method'                => 'fixed',
+                    'rate_cpm'                      => null,
+                    'rate_cpc'                      => null,
+                    'rate_cpa'                      => null,
+                    'fixed_cost'                    => 5000.50,
+                    'publisher_payout_ratio'        => null,
+                    'per_user_limit_enabled'        => true,
+                    'per_user_limit_amount'         => 2000,
+                    'per_user_limit_type'           => 'impressions',
+                    'per_user_limit_period'         => 'hour',
+                    'frequency_limit_enabled'       => true,
+                    'frequency_limit_amount'        => 30000,
+                    'frequency_limit_type'          => 'clicks',
+                    'frequency_limit_period'        => 'day',
+                    'keywords'                      => 'audi,bmw,cars,-train',
+                    'keyword_match_method'          => 'required',
+                    'zone_ids'                      => [99],
+                    'zone_group_ids'                => [21],
+                    'zone_all_ids'                  => [1, 99],
+                    'lifetime_impressions'          => 1, 
+                    'monthly_impressions'           => 1, 
+                    'daily_impressions'             => 1, 
+                    'hourly_impressions'            => 1, 
+                    'unique_lifetime_impressions'   => 1, 
+                    'unique_monthly_impressions'    => 1, 
+                    'unique_daily_impressions'      => 1, 
+                    'unique_hourly_impressions'     => 1, 
+                    'lifetime_clicks'               => 1, 
+                    'monthly_clicks'                => 1, 
+                    'daily_clicks'                  => 1, 
+                    'hourly_clicks'                 => 1, 
+                    'unique_lifetime_clicks'        => 1, 
+                    'unique_monthly_clicks'         => 1, 
+                    'unique_daily_clicks'           => 1, 
+                    'unique_hourly_clicks'          => 1,  
+                    'lifetime_ctr'                  => 100, 
+                    'monthly_ctr'                   => 100, 
+                    'daily_ctr'                     => 100, 
+                    'hourly_ctr'                    => 100, 
+                    'unique_lifetime_ctr'           => 100, 
+                    'unique_monthly_ctr'            => 100, 
+                    'unique_daily_ctr'              => 100, 
+                    'unique_hourly_ctr'             => 100,
+                    'created_at'                    => '2017-10-02T11:04:36Z',
+                    'updated_at'                    => '2017-10-02T11:04:36Z'
                 ]
             ],
             'pagination' => [
@@ -411,7 +555,7 @@ class PlacementTest extends TestCase {
         $this->assertSame($list->objects[0]->lifetime_end, '2017-10-02T14:51:14Z');
         $this->assertTrue($list->objects[0]->lifetime_quota_enabled);
         $this->assertSame($list->objects[0]->lifetime_quota_amount, 32);
-        $this->assertSame($list->objects[0]->lifetime_quota_type, 'views');
+        $this->assertSame($list->objects[0]->lifetime_quota_type, 'impressions');
         $this->assertSame($list->objects[0]->under_delivery_behaviour, 'endOnDate');
         $this->assertTrue($list->objects[0]->pricing_enabled);
         $this->assertSame($list->objects[0]->pricing_method, 'rate');
@@ -421,11 +565,11 @@ class PlacementTest extends TestCase {
         $this->assertNull($list->objects[0]->publisher_payout_ratio);
         $this->assertTrue($list->objects[0]->per_user_limit_enabled);
         $this->assertSame($list->objects[0]->per_user_limit_amount, 2000);
-        $this->assertSame($list->objects[0]->per_user_limit_type, 'views');
+        $this->assertSame($list->objects[0]->per_user_limit_type, 'impressions');
         $this->assertSame($list->objects[0]->per_user_limit_period, 'hour');
         $this->assertTrue($list->objects[0]->frequency_limit_enabled);
         $this->assertSame($list->objects[0]->frequency_limit_amount, 30000);
-        $this->assertSame($list->objects[0]->frequency_limit_type, 'views');
+        $this->assertSame($list->objects[0]->frequency_limit_type, 'impressions');
         $this->assertSame($list->objects[0]->frequency_limit_period, 'day');
         $this->assertSame($list->objects[0]->keywords, 'audi,bmw,cars,-train');
         $this->assertSame($list->objects[0]->keyword_match_method, 'preferred');
@@ -439,6 +583,30 @@ class PlacementTest extends TestCase {
         $this->assertSame(count($list->objects[0]->zone_all_ids), 2);
         $this->assertSame($list->objects[0]->zone_all_ids[0], 1);
         $this->assertSame($list->objects[0]->zone_all_ids[1], 99);
+        $this->assertSame($list->objects[0]->lifetime_impressions, 1); 
+        $this->assertSame($list->objects[0]->monthly_impressions, 1); 
+        $this->assertSame($list->objects[0]->daily_impressions, 1); 
+        $this->assertSame($list->objects[0]->hourly_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_lifetime_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_monthly_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_daily_impressions, 1); 
+        $this->assertSame($list->objects[0]->unique_hourly_impressions, 1); 
+        $this->assertSame($list->objects[0]->lifetime_clicks, 1); 
+        $this->assertSame($list->objects[0]->monthly_clicks, 1); 
+        $this->assertSame($list->objects[0]->daily_clicks, 1); 
+        $this->assertSame($list->objects[0]->hourly_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_lifetime_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_monthly_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_daily_clicks, 1); 
+        $this->assertSame($list->objects[0]->unique_hourly_clicks, 1); 
+        $this->assertSame($list->objects[0]->lifetime_ctr, 100); 
+        $this->assertSame($list->objects[0]->monthly_ctr, 100); 
+        $this->assertSame($list->objects[0]->daily_ctr, 100); 
+        $this->assertSame($list->objects[0]->hourly_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_lifetime_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_monthly_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_daily_ctr, 100); 
+        $this->assertSame($list->objects[0]->unique_hourly_ctr, 100);
         $this->assertSame($list->objects[0]->created_at, '2017-10-02T12:04:36Z');
         $this->assertSame($list->objects[0]->updated_at, '2017-10-02T12:04:36Z');
 
@@ -458,7 +626,7 @@ class PlacementTest extends TestCase {
         $this->assertSame($list->objects[1]->lifetime_end, '2017-10-02T14:51:14Z');
         $this->assertTrue($list->objects[1]->lifetime_quota_enabled);
         $this->assertSame($list->objects[1]->lifetime_quota_amount, 32);
-        $this->assertSame($list->objects[1]->lifetime_quota_type, 'views');
+        $this->assertSame($list->objects[1]->lifetime_quota_type, 'impressions');
         $this->assertSame($list->objects[1]->under_delivery_behaviour, 'endOnDate');
         $this->assertTrue($list->objects[1]->pricing_enabled);
         $this->assertSame($list->objects[1]->pricing_method, 'fixed');
@@ -466,7 +634,7 @@ class PlacementTest extends TestCase {
         $this->assertNull($list->objects[1]->publisher_payout_ratio);
         $this->assertTrue($list->objects[1]->per_user_limit_enabled);
         $this->assertSame($list->objects[1]->per_user_limit_amount, 2000);
-        $this->assertSame($list->objects[1]->per_user_limit_type, 'views');
+        $this->assertSame($list->objects[1]->per_user_limit_type, 'impressions');
         $this->assertSame($list->objects[1]->per_user_limit_period, 'hour');
         $this->assertTrue($list->objects[1]->frequency_limit_enabled);
         $this->assertSame($list->objects[1]->frequency_limit_amount, 30000);
@@ -484,6 +652,30 @@ class PlacementTest extends TestCase {
         $this->assertSame(count($list->objects[1]->zone_all_ids), 2);
         $this->assertSame($list->objects[1]->zone_all_ids[0], 1);
         $this->assertSame($list->objects[1]->zone_all_ids[1], 99);
+        $this->assertSame($list->objects[1]->lifetime_impressions, 1); 
+        $this->assertSame($list->objects[1]->monthly_impressions, 1); 
+        $this->assertSame($list->objects[1]->daily_impressions, 1); 
+        $this->assertSame($list->objects[1]->hourly_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_lifetime_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_monthly_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_daily_impressions, 1); 
+        $this->assertSame($list->objects[1]->unique_hourly_impressions, 1); 
+        $this->assertSame($list->objects[1]->lifetime_clicks, 1); 
+        $this->assertSame($list->objects[1]->monthly_clicks, 1); 
+        $this->assertSame($list->objects[1]->daily_clicks, 1); 
+        $this->assertSame($list->objects[1]->hourly_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_lifetime_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_monthly_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_daily_clicks, 1); 
+        $this->assertSame($list->objects[1]->unique_hourly_clicks, 1); 
+        $this->assertSame($list->objects[1]->lifetime_ctr, 100); 
+        $this->assertSame($list->objects[1]->monthly_ctr, 100); 
+        $this->assertSame($list->objects[1]->daily_ctr, 100); 
+        $this->assertSame($list->objects[1]->hourly_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_lifetime_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_monthly_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_daily_ctr, 100); 
+        $this->assertSame($list->objects[1]->unique_hourly_ctr, 100);
         $this->assertSame($list->objects[1]->created_at, '2017-10-02T11:04:36Z');
         $this->assertSame($list->objects[1]->updated_at, '2017-10-02T11:04:36Z');
     }
@@ -497,85 +689,133 @@ class PlacementTest extends TestCase {
     {
         // Setup mock responses
         $responseBody = [
-            'id'                        => 1,
-            'campaign_id'               => 1,
-            'priority_id'               => 1,
-            'creative_ids'              => [1],
-            'name'                      => 'The Placement',
-            'enabled'                   => true,
-            'html_target'               => '_blank',
-            'app_target'                => 'default',
-            'delivery_method'           => 'default',
-            'lifetime_dates_enabled'    => true,
-            'lifetime_start'            => '2017-10-02T12:04:34Z',
-            'lifetime_end'              => '2017-10-02T14:51:14Z',
-            'lifetime_quota_enabled'    => true,
-            'lifetime_quota_amount'     => 32,
-            'lifetime_quota_type'       => 'views',
-            'under_delivery_behaviour'  => 'endOnDate',
-            'pricing_enabled'           => true,
-            'pricing_method'            => 'rate',
-            'rate_cpm'                  => 1.25,
-            'rate_cpc'                  => 2.22,
-            'rate_cpa'                  => 3.33,
-            'fixed_cost'                => null,
-            'publisher_payout_ratio'    => null,
-            'per_user_limit_enabled'    => true,
-            'per_user_limit_amount'     => 2000,
-            'per_user_limit_type'       => 'views',
-            'per_user_limit_period'     => 'hour',
-            'frequency_limit_enabled'   => true,
-            'frequency_limit_amount'    => 30000,
-            'frequency_limit_type'      => 'views',
-            'frequency_limit_period'    => 'day',
-            'keywords'                  => 'audi,bmw,cars,-train',
-            'keyword_match_method'      => 'preferred',
-            'zone_ids'                  => [99],
-            'zone_group_ids'            => [21],
-            'zone_all_ids'              => [1, 99],
-            'created_at'                => '2017-10-02T12:04:36Z',
-            'updated_at'                => '2017-10-02T12:04:36Z'
+            'id'                            => 1,
+            'campaign_id'                   => 1,
+            'priority_id'                   => 1,
+            'creative_ids'                  => [1],
+            'name'                          => 'The Placement',
+            'enabled'                       => true,
+            'html_target'                   => '_blank',
+            'app_target'                    => 'default',
+            'delivery_method'               => 'default',
+            'lifetime_dates_enabled'        => true,
+            'lifetime_start'                => '2017-10-02T12:04:34Z',
+            'lifetime_end'                  => '2017-10-02T14:51:14Z',
+            'lifetime_quota_enabled'        => true,
+            'lifetime_quota_amount'         => 32,
+            'lifetime_quota_type'           => 'impressions',
+            'under_delivery_behaviour'      => 'endOnDate',
+            'pricing_enabled'               => true,
+            'pricing_method'                => 'rate',
+            'rate_cpm'                      => 1.25,
+            'rate_cpc'                      => 2.22,
+            'rate_cpa'                      => 3.33,
+            'fixed_cost'                    => null,
+            'publisher_payout_ratio'        => null,
+            'per_user_limit_enabled'        => true,
+            'per_user_limit_amount'         => 2000,
+            'per_user_limit_type'           => 'impressions',
+            'per_user_limit_period'         => 'hour',
+            'frequency_limit_enabled'       => true,
+            'frequency_limit_amount'        => 30000,
+            'frequency_limit_type'          => 'impressions',
+            'frequency_limit_period'        => 'day',
+            'keywords'                      => 'audi,bmw,cars,-train',
+            'keyword_match_method'          => 'preferred',
+            'zone_ids'                      => [99],
+            'zone_group_ids'                => [21],
+            'zone_all_ids'                  => [1, 99],
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-02T12:04:36Z',
+            'updated_at'                    => '2017-10-02T12:04:36Z'
         ];
 
         $responseBody2 = [
-            'id'                        => 1,
-            'campaign_id'               => 1,
-            'priority_id'               => 1,
-            'creative_ids'              => [1],
-            'name'                      => 'Updated Name',
-            'enabled'                   => false,
-            'html_target'               => '_parent',
-            'app_target'                => 'inside',
-            'delivery_method'           => 'default',
-            'lifetime_dates_enabled'    => false,
-            'lifetime_start'            => null,
-            'lifetime_end'              => null,
-            'lifetime_quota_enabled'    => false,
-            'lifetime_quota_amount'     => null,
-            'lifetime_quota_type'       => null,
-            'under_delivery_behaviour'  => 'endOnDate',
-            'pricing_enabled'           => true,
-            'pricing_method'            => 'fixed',
-            'rate_cpm'                  => null,
-            'rate_cpc'                  => null,
-            'rate_cpa'                  => null,
-            'fixed_cost'                => 4000.50,
-            'publisher_payout_ratio'    => 50,
-            'per_user_limit_enabled'    => false,
-            'per_user_limit_amount'     => null,
-            'per_user_limit_type'       => null,
-            'per_user_limit_period'     => null,
-            'frequency_limit_enabled'   => true,
-            'frequency_limit_amount'    => 25000,
-            'frequency_limit_type'      => 'views',
-            'frequency_limit_period'    => 'day',
-            'keywords'                  => 'audi,bmw,car',
-            'keyword_match_method'      => 'required',
-            'zone_ids'                  => [99],
-            'zone_group_ids'            => [21],
-            'zone_all_ids'              => [1, 99],
-            'created_at'                => '2017-10-02T12:04:36Z',
-            'updated_at'                => '2017-10-02T12:04:37Z'
+            'id'                            => 1,
+            'campaign_id'                   => 1,
+            'priority_id'                   => 1,
+            'creative_ids'                  => [1],
+            'name'                          => 'Updated Name',
+            'enabled'                       => false,
+            'html_target'                   => '_parent',
+            'app_target'                    => 'inside',
+            'delivery_method'               => 'default',
+            'lifetime_dates_enabled'        => false,
+            'lifetime_start'                => null,
+            'lifetime_end'                  => null,
+            'lifetime_quota_enabled'        => false,
+            'lifetime_quota_amount'         => null,
+            'lifetime_quota_type'           => null,
+            'under_delivery_behaviour'      => 'endOnDate',
+            'pricing_enabled'               => true,
+            'pricing_method'                => 'fixed',
+            'rate_cpm'                      => null,
+            'rate_cpc'                      => null,
+            'rate_cpa'                      => null,
+            'fixed_cost'                    => 4000.50,
+            'publisher_payout_ratio'        => 50,
+            'per_user_limit_enabled'        => false,
+            'per_user_limit_amount'         => null,
+            'per_user_limit_type'           => null,
+            'per_user_limit_period'         => null,
+            'frequency_limit_enabled'       => true,
+            'frequency_limit_amount'        => 25000,
+            'frequency_limit_type'          => 'impressions',
+            'frequency_limit_period'        => 'day',
+            'keywords'                      => 'audi,bmw,car',
+            'keyword_match_method'          => 'required',
+            'zone_ids'                      => [99],
+            'zone_group_ids'                => [21],
+            'zone_all_ids'                  => [1, 99],
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-02T12:04:36Z',
+            'updated_at'                    => '2017-10-02T12:04:37Z'
         ];
 
         $mock = new MockHandler([
@@ -640,7 +880,7 @@ class PlacementTest extends TestCase {
         $this->assertNull($placement->per_user_limit_period);
         $this->assertTrue($placement->frequency_limit_enabled);
         $this->assertSame($placement->frequency_limit_amount, 25000);
-        $this->assertSame($placement->frequency_limit_type, 'views');
+        $this->assertSame($placement->frequency_limit_type, 'impressions');
         $this->assertSame($placement->frequency_limit_period, 'day');
         $this->assertSame($placement->keywords, 'audi,bmw,car');
         $this->assertSame($placement->keyword_match_method, 'required');
@@ -654,6 +894,30 @@ class PlacementTest extends TestCase {
         $this->assertSame(count($placement->zone_all_ids), 2);
         $this->assertSame($placement->zone_all_ids[0], 1);
         $this->assertSame($placement->zone_all_ids[1], 99);
+        $this->assertSame($placement->lifetime_impressions, 1); 
+        $this->assertSame($placement->monthly_impressions, 1); 
+        $this->assertSame($placement->daily_impressions, 1); 
+        $this->assertSame($placement->hourly_impressions, 1); 
+        $this->assertSame($placement->unique_lifetime_impressions, 1); 
+        $this->assertSame($placement->unique_monthly_impressions, 1); 
+        $this->assertSame($placement->unique_daily_impressions, 1); 
+        $this->assertSame($placement->unique_hourly_impressions, 1); 
+        $this->assertSame($placement->lifetime_clicks, 1); 
+        $this->assertSame($placement->monthly_clicks, 1); 
+        $this->assertSame($placement->daily_clicks, 1); 
+        $this->assertSame($placement->hourly_clicks, 1); 
+        $this->assertSame($placement->unique_lifetime_clicks, 1); 
+        $this->assertSame($placement->unique_monthly_clicks, 1); 
+        $this->assertSame($placement->unique_daily_clicks, 1); 
+        $this->assertSame($placement->unique_hourly_clicks, 1); 
+        $this->assertSame($placement->lifetime_ctr, 100); 
+        $this->assertSame($placement->monthly_ctr, 100); 
+        $this->assertSame($placement->daily_ctr, 100); 
+        $this->assertSame($placement->hourly_ctr, 100); 
+        $this->assertSame($placement->unique_lifetime_ctr, 100); 
+        $this->assertSame($placement->unique_monthly_ctr, 100); 
+        $this->assertSame($placement->unique_daily_ctr, 100); 
+        $this->assertSame($placement->unique_hourly_ctr, 100);
         $this->assertSame($placement->created_at, '2017-10-02T12:04:36Z');
         $this->assertSame($placement->updated_at, '2017-10-02T12:04:37Z');
     }
@@ -667,44 +931,68 @@ class PlacementTest extends TestCase {
     {
         // Setup mock responses
         $responseBody = [
-            'id'                        => 1,
-            'campaign_id'               => 1,
-            'priority_id'               => 1,
-            'creative_ids'              => [1],
-            'name'                      => 'The Placement',
-            'enabled'                   => true,
-            'html_target'               => '_blank',
-            'app_target'                => 'default',
-            'delivery_method'           => 'default',
-            'lifetime_dates_enabled'    => true,
-            'lifetime_start'            => '2017-10-02T12:04:34Z',
-            'lifetime_end'              => '2017-10-02T14:51:14Z',
-            'lifetime_quota_enabled'    => true,
-            'lifetime_quota_amount'     => 32,
-            'lifetime_quota_type'       => 'views',
-            'under_delivery_behaviour'  => 'endOnDate',
-            'pricing_enabled'           => true,
-            'pricing_method'            => 'rate',
-            'rate_cpm'                  => 1.25,
-            'rate_cpc'                  => 2.22,
-            'rate_cpa'                  => 3.33,
-            'fixed_cost'                => null,
-            'publisher_payout_ratio'    => null,
-            'per_user_limit_enabled'    => true,
-            'per_user_limit_amount'     => 2000,
-            'per_user_limit_type'       => 'views',
-            'per_user_limit_period'     => 'hour',
-            'frequency_limit_enabled'   => true,
-            'frequency_limit_amount'    => 30000,
-            'frequency_limit_type'      => 'views',
-            'frequency_limit_period'    => 'day',
-            'keywords'                  => 'audi,bmw,cars,-train',
-            'keyword_match_method'      => 'preferred',
-            'zone_ids'                  => [99],
-            'zone_group_ids'            => [21],
-            'zone_all_ids'              => [1, 99],
-            'created_at'                => '2017-10-02T12:04:36Z',
-            'updated_at'                => '2017-10-02T12:04:36Z'
+            'id'                            => 1,
+            'campaign_id'                   => 1,
+            'priority_id'                   => 1,
+            'creative_ids'                  => [1],
+            'name'                          => 'The Placement',
+            'enabled'                       => true,
+            'html_target'                   => '_blank',
+            'app_target'                    => 'default',
+            'delivery_method'               => 'default',
+            'lifetime_dates_enabled'        => true,
+            'lifetime_start'                => '2017-10-02T12:04:34Z',
+            'lifetime_end'                  => '2017-10-02T14:51:14Z',
+            'lifetime_quota_enabled'        => true,
+            'lifetime_quota_amount'         => 32,
+            'lifetime_quota_type'           => 'impressions',
+            'under_delivery_behaviour'      => 'endOnDate',
+            'pricing_enabled'               => true,
+            'pricing_method'                => 'rate',
+            'rate_cpm'                      => 1.25,
+            'rate_cpc'                      => 2.22,
+            'rate_cpa'                      => 3.33,
+            'fixed_cost'                    => null,
+            'publisher_payout_ratio'        => null,
+            'per_user_limit_enabled'        => true,
+            'per_user_limit_amount'         => 2000,
+            'per_user_limit_type'           => 'impressions',
+            'per_user_limit_period'         => 'hour',
+            'frequency_limit_enabled'       => true,
+            'frequency_limit_amount'        => 30000,
+            'frequency_limit_type'          => 'impressions',
+            'frequency_limit_period'        => 'day',
+            'keywords'                      => 'audi,bmw,cars,-train',
+            'keyword_match_method'          => 'preferred',
+            'zone_ids'                      => [99],
+            'zone_group_ids'                => [21],
+            'zone_all_ids'                  => [1, 99],
+            'lifetime_impressions'          => 1, 
+            'monthly_impressions'           => 1, 
+            'daily_impressions'             => 1, 
+            'hourly_impressions'            => 1, 
+            'unique_lifetime_impressions'   => 1, 
+            'unique_monthly_impressions'    => 1, 
+            'unique_daily_impressions'      => 1, 
+            'unique_hourly_impressions'     => 1, 
+            'lifetime_clicks'               => 1, 
+            'monthly_clicks'                => 1, 
+            'daily_clicks'                  => 1, 
+            'hourly_clicks'                 => 1, 
+            'unique_lifetime_clicks'        => 1, 
+            'unique_monthly_clicks'         => 1, 
+            'unique_daily_clicks'           => 1, 
+            'unique_hourly_clicks'          => 1,  
+            'lifetime_ctr'                  => 100, 
+            'monthly_ctr'                   => 100, 
+            'daily_ctr'                     => 100, 
+            'hourly_ctr'                    => 100, 
+            'unique_lifetime_ctr'           => 100, 
+            'unique_monthly_ctr'            => 100, 
+            'unique_daily_ctr'              => 100, 
+            'unique_hourly_ctr'             => 100,
+            'created_at'                    => '2017-10-02T12:04:36Z',
+            'updated_at'                    => '2017-10-02T12:04:36Z'
         ];
 
         $responseBody2 = [
@@ -768,6 +1056,30 @@ class PlacementTest extends TestCase {
         $this->assertFalse(property_exists($placement, 'zone_ids'));
         $this->assertFalse(property_exists($placement, 'zone_group_ids'));
         $this->assertFalse(property_exists($placement, 'zone_all_ids'));
+        $this->assertFalse(property_exists($placement, 'lifetime_impressions')); 
+        $this->assertFalse(property_exists($placement, 'monthly_impressions')); 
+        $this->assertFalse(property_exists($placement, 'daily_impressions')); 
+        $this->assertFalse(property_exists($placement, 'hourly_impressions')); 
+        $this->assertFalse(property_exists($placement, 'unique_lifetime_impressions')); 
+        $this->assertFalse(property_exists($placement, 'unique_monthly_impressions')); 
+        $this->assertFalse(property_exists($placement, 'unique_daily_impressions')); 
+        $this->assertFalse(property_exists($placement, 'unique_hourly_impressions')); 
+        $this->assertFalse(property_exists($placement, 'lifetime_clicks')); 
+        $this->assertFalse(property_exists($placement, 'monthly_clicks')); 
+        $this->assertFalse(property_exists($placement, 'daily_clicks')); 
+        $this->assertFalse(property_exists($placement, 'hourly_clicks')); 
+        $this->assertFalse(property_exists($placement, 'unique_lifetime_clicks')); 
+        $this->assertFalse(property_exists($placement, 'unique_monthly_clicks')); 
+        $this->assertFalse(property_exists($placement, 'unique_daily_clicks')); 
+        $this->assertFalse(property_exists($placement, 'unique_hourly_clicks')); 
+        $this->assertFalse(property_exists($placement, 'lifetime_ctr')); 
+        $this->assertFalse(property_exists($placement, 'monthly_ctr')); 
+        $this->assertFalse(property_exists($placement, 'daily_ctr')); 
+        $this->assertFalse(property_exists($placement, 'hourly_ctr')); 
+        $this->assertFalse(property_exists($placement, 'unique_lifetime_ctr')); 
+        $this->assertFalse(property_exists($placement, 'unique_monthly_ctr')); 
+        $this->assertFalse(property_exists($placement, 'unique_daily_ctr')); 
+        $this->assertFalse(property_exists($placement, 'unique_hourly_ctr'));
         $this->assertFalse(property_exists($placement, 'created_at'));
         $this->assertFalse(property_exists($placement, 'updated_at'));
     }
