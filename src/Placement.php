@@ -94,50 +94,6 @@ class Placement extends ApiResource
     ];
 
     /**
-     * Data related to object
-     *
-     * @var array<string>
-     */
-    public $data = [];
-  
-    /**
-     * Attributes that will be used in the next save (update)
-     *
-     * @var array<string>
-     */
-    public $dirtyAttributes = [];
-
-    /**
-     * Magic setter
-     *
-     * @param string $name
-     * @param mixed $value
-     * @return void
-     */
-    public function __set($name, $value) {
-
-      // Check if attribute getting set is in attributes of object and add to dirty array for update
-      if (in_array($name, self::$attributes)) {
-
-        $this->dirtyAttributes[] = $name;
-      }
-
-      $this->data[$name] = $value;
-    }
-
-    /**
-     * Magic getter
-     *
-     * @param string $name
-     * @param mixed $value
-     * @return mixed
-     */
-    public function __get($name) {
-
-      return isset($this->data[$name]) ? $this->data[$name] : null;
-    }
-
-    /**
      * Create a new placement with the provided properties.
      *
      * @param array|null $body The properties of the placement
@@ -209,17 +165,19 @@ class Placement extends ApiResource
       // Create body using keys required by API
       $body = [];
 
-      // Loop through all dirt attributes and save
-      foreach ($this->dirtyAttributes as $attributeName) {
+      // Loop through all attributes and save
+      foreach (self::$attributes as $attributeName) {
 
         // Ignore expanded attributes
         if (in_array($attributeName, ['campaign', 'priority', 'creatives', 'zones', 'zone_groups'])) {
           continue;
         }
 
-        $body[$attributeName] = $this->data[$attributeName];
+        if (property_exists($this, $attributeName)) {
+          $body[$attributeName] = $this->{$attributeName};
+        }
       }
-
+      
       // Execute
       $responseBody = self::_update(Placement::RESOURCE_PATH . '/' . $this->id, null, $body);
 
@@ -236,10 +194,10 @@ class Placement extends ApiResource
     {   
 
       // Execute
-      self::_delete(Placement::RESOURCE_PATH . '/' . $this->data['id']);
+      self::_delete(Placement::RESOURCE_PATH . '/' . $this->id);
 
       // Set property to deleted
-      $this->data['isDeleted'] = true;
+      $this->isDeleted = true;
 
       // Unset all other properties (except id)
       foreach (self::$attributes as $attributeName) {
@@ -248,7 +206,7 @@ class Placement extends ApiResource
          continue;
        }
 
-       unset($this->data[$attributeName]);
+       unset($this->{$attributeName});
      }
    }
 
@@ -306,9 +264,6 @@ class Placement extends ApiResource
           $placement->{$key} = $value;
         }
       }
-
-      // Clear dirty attributes as this is a new object
-      $placement->dirtyAttributes = [];
       
       return $placement;
     }
@@ -365,8 +320,5 @@ class Placement extends ApiResource
           $this->{$key} = $value;
         }
       }
-
-      // Clear dirty attributes as all properties
-      $this->dirtyAttributes = [];
     }
-  }
+}
