@@ -4,24 +4,24 @@ namespace Adyo;
 
 use Adyo\Adyo;
 
-class ImpressionUserCount extends ApiResource 
+class UserCount extends ApiResource 
 {
     /**
      * The API resource path to append to base url when making requests
      *
      * @var string
      */
-    const RESOURCE_PATH = 'analytics/impression-users';
+    const RESOURCE_PATH = 'analytics/users';
 
     /**
-     * Get impression user count with specific params
+     * Get user count with specific params
      *
      * @param array|null $body The params such as filters, aggregations..
      * @return mixed
      */
     public static function get($body = null)
     {   
-        $responseBody = self::_staticPost(ImpressionUserCount::RESOURCE_PATH, null, $body, false);
+        $responseBody = self::_staticPost(UserCount::RESOURCE_PATH, null, $body, false);
 
         // If aggregated response, map differently that single response
         if (array_key_exists('group_by', $body) && !is_null($body['group_by'])) {

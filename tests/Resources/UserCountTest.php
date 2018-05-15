@@ -10,10 +10,10 @@ use GuzzleHttp\Psr7\Response;
 use Adyo\Adyo;
 use Adyo\Client as AdyoClient;
 
-class ClickUserCountTest extends TestCase {
+class UserCountTest extends TestCase {
 
     /**
-      * Test receiving a single click user count (no aggregations)
+      * Test receiving a single user count (no aggregations)
       *
       * @return void
       */
@@ -34,8 +34,9 @@ class ClickUserCountTest extends TestCase {
         AdyoClient::$httpClient = new GuzzleClient(['handler' => $handler]);        
         Adyo::setApiKey('keygoeshere');
 
-        // Get the click user count
-        $count = ClickUserCount::get([
+        // Get the user count
+        $count = UserCount::get([
+            'event_type' => 'impression',
             'campaign_ids' => [1, 2, 3],
             'advertiser_ids' => [1, 2, 3],
             'placement_ids' => [1, 2, 3],
@@ -49,7 +50,7 @@ class ClickUserCountTest extends TestCase {
     }
 
     /**
-      * Test receiving an aggregated click user count
+      * Test receiving an aggregated user count
       *
       * @return void
       */
@@ -81,8 +82,9 @@ class ClickUserCountTest extends TestCase {
         AdyoClient::$httpClient = new GuzzleClient(['handler' => $handler]);        
         Adyo::setApiKey('keygoeshere');
 
-        // Get the click user count
-        $counts = ClickUserCount::get([
+        // Get the user count
+        $counts = UserCount::get([
+            'event_type' => 'impression',
             'campaign_ids' => [1, 2, 3],
             'advertiser_ids' => [1, 2, 3],
             'placement_ids' => [1, 2, 3],
