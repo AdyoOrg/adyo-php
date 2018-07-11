@@ -246,6 +246,62 @@ class CreativeTest extends TestCase {
     }
 
     /**
+      * Test creating a tag creative
+      *
+      * @return void
+      */
+    public function testCreateTag()
+    {   
+        // Setup mock response
+        $responseBody = [
+            'id'                    => 1,
+            'advertiser_id'         => 1,
+            'type'                  => 'tag',
+            'name'                  => 'Tag Creative',
+            'description'           => 'Description of creative.',
+            'url'                   => null,
+            'alt_text'              => null,
+            'html'                 => '<p>The Tag<p>',
+            'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'created_at'            => '2017-10-04T12:57:18Z',
+            'updated_at'            => '2017-10-04T12:57:18Z'
+        ];
+
+        $mock = new MockHandler([
+            new Response(200, [], json_encode($responseBody), null),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+
+        // Set static http client with mock handler
+        AdyoClient::$httpClient = new GuzzleClient(['handler' => $handler]);        
+        Adyo::setApiKey('keygoeshere');
+
+        // Create the creative object
+        $creative = Creative::create([
+            'advertiser_id'         => 1,
+            'type'                  => 'tag',
+            'name'                  => 'Tag Creative',
+            'description'           => 'Description of creative.',
+            'html'                 => '<p>The Tag<p>',
+            'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+        ]);
+
+        // Assert
+        $this->assertInstanceOf(\Adyo\Creative::class, $creative);
+        $this->assertSame($creative->id, 1);
+        $this->assertSame($creative->advertiser_id, 1);
+        $this->assertSame($creative->type, 'tag');
+        $this->assertSame($creative->name, 'Tag Creative');
+        $this->assertSame($creative->description, 'Description of creative.');
+        $this->assertNull($creative->url);
+        $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->html, '<p>The Tag<p>');
+        $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
+        $this->assertSame($creative->updated_at, '2017-10-04T12:57:18Z');
+    }
+
+    /**
       * Test the retrieval of a creative
       *
       * @return void

@@ -39,6 +39,9 @@ class Creative extends ApiResource
       'title',
       'body',
 
+      // Tag Specific
+      'html',
+
       'created_at',
       'updated_at',
 
