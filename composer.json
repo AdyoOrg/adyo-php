@@ -1,7 +1,7 @@
 {
     "name": "adyo/adyo-php",
     "description": "PHP Bindings Library for the Adyo Management & Analytics API.",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "homepage" : "http://github.com/AdyoOrg/adyo-php",
     "authors" : [
         {

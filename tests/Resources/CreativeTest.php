@@ -261,7 +261,8 @@ class CreativeTest extends TestCase {
             'description'           => 'Description of creative.',
             'url'                   => null,
             'alt_text'              => null,
-            'html'                 => '<p>The Tag<p>',
+            'html'                  => '<p>The Tag<p>',
+            'tag_domain'            => 'http://www.adyo.co.za',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
             'created_at'            => '2017-10-04T12:57:18Z',
             'updated_at'            => '2017-10-04T12:57:18Z'
@@ -283,7 +284,8 @@ class CreativeTest extends TestCase {
             'type'                  => 'tag',
             'name'                  => 'Tag Creative',
             'description'           => 'Description of creative.',
-            'html'                 => '<p>The Tag<p>',
+            'html'                  => '<p>The Tag<p>',
+            'tag_domain'            => 'http://www.adyo.co.za',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
         ]);
 
@@ -297,6 +299,7 @@ class CreativeTest extends TestCase {
         $this->assertNull($creative->url);
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
         $this->assertSame($creative->html, '<p>The Tag<p>');
+        $this->assertSame($creative->tag_domain, 'http://www.adyo.co.za');
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($creative->updated_at, '2017-10-04T12:57:18Z');
     }
