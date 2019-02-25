@@ -90,6 +90,7 @@ class Client {
         // Setup required headers
         $headers['X-Adyo-ApiKey'] = $this->apiKey;
         $headers['Accept'] = 'application/json';
+        $headers['Accept-Encoding'] = 'gzip';
 
         $encodedBody = null;
 
