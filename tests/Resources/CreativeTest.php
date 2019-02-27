@@ -29,6 +29,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.png',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 100,
             'height'                => 58,
             'created_at'            => '2017-10-04T12:57:18Z',
@@ -64,6 +65,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertSame($creative->url, 'http://www.adyo.co.za/test.png');
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->width, 100);
         $this->assertSame($creative->height, 58);
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
@@ -87,6 +89,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.mp4',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 560,
             'height'                => 320,
             'video_frame_rate'      => 30,
@@ -112,6 +115,7 @@ class CreativeTest extends TestCase {
             'name'                  => 'Video Creative',
             'description'           => 'Description of creative.',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'file'                  => 'tests/test.mp4',
         ]);
 
@@ -124,6 +128,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertSame($creative->url, 'http://www.adyo.co.za/test.mp4');
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->width, 560);
         $this->assertSame($creative->height, 320);
         $this->assertSame($creative->video_frame_rate, 30);
@@ -149,6 +154,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.zip',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'created_at'            => '2017-10-04T12:57:18Z',
             'updated_at'            => '2017-10-04T12:57:18Z'
         ];
@@ -170,6 +176,7 @@ class CreativeTest extends TestCase {
             'name'                  => 'Rich Media Creative',
             'description'           => 'Description of creative.',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'file'                  => 'tests/test.zip',
         ]);
 
@@ -182,6 +189,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertSame($creative->url, 'http://www.adyo.co.za/test.zip');
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
         $this->assertSame($creative->updated_at, '2017-10-04T12:57:18Z');
     }
@@ -205,6 +213,7 @@ class CreativeTest extends TestCase {
             'title'                 => 'Title Text',
             'body'                  => 'Body text.',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'created_at'            => '2017-10-04T12:57:18Z',
             'updated_at'            => '2017-10-04T12:57:18Z'
         ];
@@ -228,6 +237,7 @@ class CreativeTest extends TestCase {
             'title'                 => 'Title Text',
             'body'                  => 'Body text.',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
         ]);
 
         // Assert
@@ -239,6 +249,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertNull($creative->url);
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->title, 'Title Text');
         $this->assertSame($creative->body, 'Body text.');
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
@@ -264,6 +275,7 @@ class CreativeTest extends TestCase {
             'html'                  => '<p>The Tag<p>',
             'tag_domain'            => 'http://www.adyo.co.za',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'created_at'            => '2017-10-04T12:57:18Z',
             'updated_at'            => '2017-10-04T12:57:18Z'
         ];
@@ -287,6 +299,7 @@ class CreativeTest extends TestCase {
             'html'                  => '<p>The Tag<p>',
             'tag_domain'            => 'http://www.adyo.co.za',
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
         ]);
 
         // Assert
@@ -298,6 +311,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertNull($creative->url);
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->html, '<p>The Tag<p>');
         $this->assertSame($creative->tag_domain, 'http://www.adyo.co.za');
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
@@ -321,6 +335,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.png',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 100,
             'height'                => 58,
             'created_at'            => '2017-10-04T12:57:18Z',
@@ -349,6 +364,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Description of creative.');
         $this->assertSame($creative->url, 'http://www.adyo.co.za/test.png');
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->width, 100);
         $this->assertSame($creative->height, 58);
         $this->assertSame($creative->created_at, '2017-10-04T12:57:18Z');
@@ -374,6 +390,7 @@ class CreativeTest extends TestCase {
                     'url'                   => 'http://www.adyo.co.za/test.png',
                     'alt_text'              => null,
                     'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+                    'metadata'              => '{}',
                     'width'                 => 100,
                     'height'                => 58,
                     'created_at'            => '2017-10-04T12:57:18Z',
@@ -388,6 +405,7 @@ class CreativeTest extends TestCase {
                     'url'                   => 'http://www.adyo.co.za/test.mp4',
                     'alt_text'              => null,
                     'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+                    'metadata'              => '{}',
                     'width'                 => 560,
                     'height'                => 320,
                     'video_frame_rate'      => 30,
@@ -444,6 +462,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($list->objects[0]->description, 'Description of creative.');
         $this->assertSame($list->objects[0]->url, 'http://www.adyo.co.za/test.png');
         $this->assertSame($list->objects[0]->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($list->objects[0]->metadata, '{}');
         $this->assertSame($list->objects[0]->width, 100);
         $this->assertSame($list->objects[0]->height, 58);
         $this->assertSame($list->objects[0]->created_at, '2017-10-04T12:57:18Z');
@@ -457,6 +476,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($list->objects[1]->description, 'Description of creative.');
         $this->assertSame($list->objects[1]->url, 'http://www.adyo.co.za/test.mp4');
         $this->assertSame($list->objects[1]->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($list->objects[1]->metadata, '{}');
         $this->assertSame($list->objects[1]->width, 560);
         $this->assertSame($list->objects[1]->height, 320);
         $this->assertSame($list->objects[1]->video_frame_rate, 30);
@@ -482,6 +502,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.png',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 100,
             'height'                => 58,
             'created_at'            => '2017-10-04T12:57:18Z',
@@ -497,6 +518,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test2.png',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 50,
             'height'                => 29,
             'created_at'            => '2017-10-04T12:58:18Z',
@@ -532,6 +554,7 @@ class CreativeTest extends TestCase {
         $this->assertSame($creative->description, 'Updated description.');
         $this->assertSame($creative->url, 'http://www.adyo.co.za/test2.png');
         $this->assertSame($creative->third_party_pixel_url, 'http://www.adyo.co.za/pixel.jpg');
+        $this->assertSame($creative->metadata, '{}');
         $this->assertSame($creative->width, 50);
         $this->assertSame($creative->height, 29);
         $this->assertSame($creative->created_at, '2017-10-04T12:58:18Z');
@@ -555,6 +578,7 @@ class CreativeTest extends TestCase {
             'url'                   => 'http://www.adyo.co.za/test.png',
             'alt_text'              => null,
             'third_party_pixel_url' => 'http://www.adyo.co.za/pixel.jpg',
+            'metadata'              => '{}',
             'width'                 => 100,
             'height'                => 58,
             'created_at'            => '2017-10-04T12:57:18Z',
@@ -594,6 +618,7 @@ class CreativeTest extends TestCase {
         $this->assertFalse(property_exists($creative, 'url'));
         $this->assertFalse(property_exists($creative, 'alt_text'));
         $this->assertFalse(property_exists($creative, 'third_party_pixel_url'));
+        $this->assertFalse(property_exists($creative, 'metadata'));
         $this->assertFalse(property_exists($creative, 'width'));
         $this->assertFalse(property_exists($creative, 'height'));
         $this->assertFalse(property_exists($creative, 'created_at'));

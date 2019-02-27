@@ -28,6 +28,7 @@ class Creative extends ApiResource
       'destination_url',
       'alt_text',
       'third_party_pixel_url',
+      'metadata',
       'width',
       'height',
 
