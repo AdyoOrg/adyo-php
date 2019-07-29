@@ -11,7 +11,7 @@ class ImpressionCount extends ApiResource
      *
      * @var string
      */
-    const RESOURCE_PATH = 'analytics/impressions';
+    const RESOURCE_PATH = 'impressions';
 
     /**
      * Get impression count with specific params
@@ -21,7 +21,7 @@ class ImpressionCount extends ApiResource
      */
     public static function get($body = null)
     {   
-        $responseBody = self::_staticPost(ImpressionCount::RESOURCE_PATH, null, $body, false);
+        $responseBody = self::_staticPost(ImpressionCount::RESOURCE_PATH, null, $body, false, true);
 
         // If aggregated response, map differently that single response
         if (array_key_exists('group_by', $body) && !is_null($body['group_by'])) {

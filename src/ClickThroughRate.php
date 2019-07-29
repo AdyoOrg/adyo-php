@@ -11,7 +11,7 @@ class ClickThroughRate extends ApiResource
      *
      * @var string
      */
-    const RESOURCE_PATH = 'analytics/ctr';
+    const RESOURCE_PATH = 'ctr';
 
     /**
      * Get ctr count with specific params
@@ -21,7 +21,7 @@ class ClickThroughRate extends ApiResource
      */
     public static function get($body = null)
     {   
-        $responseBody = self::_staticPost(ClickThroughRate::RESOURCE_PATH, null, $body, false);
+        $responseBody = self::_staticPost(ClickThroughRate::RESOURCE_PATH, null, $body, false, true);
 
         // If aggregated response, map differently that single response
         if (array_key_exists('group_by', $body) && !is_null($body['group_by'])) {

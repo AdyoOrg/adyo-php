@@ -11,11 +11,12 @@ class ApiResource
       * @param array|null $queryParams Query string parameters to append to URL
       * @param array|null $body Body to convert to JSON string for request
       * @param bool $multipart Whether to use multipart/form-data for the creation (E.g uploading files)
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _create($urlPath = null, $queryParams = null, $body = null, $multipart = false)
+    protected static function _create($urlPath = null, $queryParams = null, $body = null, $multipart = false, $isAnalytics = false)
     { 
-        return self::_staticPost($urlPath, $queryParams, $body, $multipart);
+        return self::_staticPost($urlPath, $queryParams, $body, $multipart, $isAnalytics);
     }
 
     /**
@@ -23,11 +24,12 @@ class ApiResource
       *
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _retrieve($urlPath = null, $queryParams = null)
+    protected static function _retrieve($urlPath = null, $queryParams = null, $isAnalytics = false)
     {
-        return self::_staticGet($urlPath, $queryParams);
+        return self::_staticGet($urlPath, $queryParams, $isAnalytics);
     }
 
     /**
@@ -35,11 +37,12 @@ class ApiResource
       *
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _retrieveAll($urlPath = null, $queryParams = null)
+    protected static function _retrieveAll($urlPath = null, $queryParams = null, $isAnalytics = false)
     {
-        return self::_staticGet($urlPath, $queryParams);
+        return self::_staticGet($urlPath, $queryParams, $isAnalytics);
     }
 
     /**
@@ -50,15 +53,16 @@ class ApiResource
       * @param array|null $body Body of of the request
       * @param bool $usePost Whether to rather user a POST method instead of PUT for updates.
       * @param bool $multipart Whether to use multipart/form-data for the creation (E.g uploading files)
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _update($urlPath = null, $queryParams = null, $body = null, $usePost = false, $multipart = false)
+    protected static function _update($urlPath = null, $queryParams = null, $body = null, $usePost = false, $multipart = false, $isAnalytics = false)
     { 
         if ($usePost) {
-          return self::_staticPost($urlPath, $queryParams, $body, $multipart);
+          return self::_staticPost($urlPath, $queryParams, $body, $multipart, $isAnalytics);
         }
 
-        return self::_staticPut($urlPath, $queryParams, $body, $multipart);
+        return self::_staticPut($urlPath, $queryParams, $body, $multipart, $isAnalytics);
     }
 
     /**
@@ -66,11 +70,12 @@ class ApiResource
       *
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _delete($urlPath = null, $queryParams = null)
+    protected static function _delete($urlPath = null, $queryParams = null, $isAnalytics = false)
     {
-        return self::_staticDelete($urlPath);
+        return self::_staticDelete($urlPath, $queryParams, $isAnalytics);
     }
 
     /**
@@ -78,11 +83,12 @@ class ApiResource
       *
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _staticGet($urlPath = null, $queryParams = null) {
+    protected static function _staticGet($urlPath = null, $queryParams = null, $isAnalytics = false) {
 
-        $client = self::getClientInstance();
+        $client = self::getClientInstance($isAnalytics);
         
         return $client->request('GET', $urlPath, $queryParams);
     } 
@@ -94,11 +100,12 @@ class ApiResource
       * @param array|null $queryParams Query string parameters to append to URL
       * @param array|null $body The array body which is converted to JSON
       * @param bool $multipart Whether to use multipart/form-data for the POST (E.g uploading files)
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _staticPost($urlPath = null, $queryParams = null, $body = null, $multipart) {
+    protected static function _staticPost($urlPath = null, $queryParams = null, $body = null, $multipart, $isAnalytics = false) {
 
-        $client = self::getClientInstance();
+        $client = self::getClientInstance($isAnalytics);
         
         if ($multipart) {
 
@@ -134,11 +141,12 @@ class ApiResource
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
       * @param array|null $body The array body which is converted to JSON
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _staticPut($urlPath = null, $queryParams = null, $body = null) {
+    protected static function _staticPut($urlPath = null, $queryParams = null, $body = null, $isAnalytics = false) {
 
-        $client = self::getClientInstance();
+        $client = self::getClientInstance($isAnalytics);
         
         return $client->request('PUT', $urlPath, $queryParams, $body);
     }  
@@ -148,11 +156,12 @@ class ApiResource
       *
       * @param string|null $urlPath The path to append to the base URL
       * @param array|null $queryParams Query string parameters to append to URL
+      * @param bool $isAnalytics Whether we should use Analytics API endpoint
       * @return array The response array from the request
       */
-    protected static function _staticDelete($urlPath = null, $queryParams = null) {
+    protected static function _staticDelete($urlPath = null, $queryParams = null, $isAnalytics = false) {
 
-        $client = self::getClientInstance();
+        $client = self::getClientInstance($isAnalytics);
         
         return $client->request('DELETE', $urlPath, $queryParams);
     } 
@@ -160,9 +169,15 @@ class ApiResource
     /**
       * Returns a new instance of our API Client with the latest config
       *
+      * @param bool $isAnalytics | Whether to create client pointing to Analytics API
       * @return Adyo\Client
       */
-    private static function getClientInstance() {
+    private static function getClientInstance(bool $isAnalytics = false) {
+
+        if ($isAnalytics === true) {
+
+          return new Client(Adyo::$apiKey, Adyo::$analyticsApiVersion, Adyo::$analyticsApiBase);
+        }
 
         return new Client(Adyo::$apiKey, Adyo::$apiVersion, Adyo::$apiBase);
     }

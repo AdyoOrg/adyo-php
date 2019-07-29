@@ -19,11 +19,25 @@ class Adyo {
     public static $apiVersion = 'v1';
 
     /**
+     * The version of the Adyo Analytics API to use for requests.
+     *
+     * @var string
+     */
+    public static $analyticsApiVersion = 'v1';
+
+    /**
      * The base URL for the Adyo API.
      *
      * @var string
      */
     public static $apiBase = 'https://api.adyo.co.za';
+
+    /**
+     * The base URL for the Adyo Analytics API.
+     *
+     * @var string
+     */
+    public static $analyticsApiBase = 'https://analytics.adyo.co.za';
 
     /**
      * Set the API key to be used for requests.
@@ -67,5 +81,27 @@ class Adyo {
     public static function setApiVersion($apiVersion)
     {
         self::$apiVersion = $apiVersion;
+    }
+
+    /**
+     * Get the Analytics API version used for requests.
+     *
+     * @return string 
+     */
+    public static function getAnalyticsApiVersion()
+    {
+        return self::$analyticsApiVersion;
+    }
+
+    /**
+     * Set the Analytics API version to use for requests. 
+     *
+     * @param string $analyticsApiVersion 
+     *
+     * @return void
+     */
+    public static function setAnalyticsApiVersion($analyticsApiVersion)
+    {
+        self::$analyticsApiVersion = $analyticsApiVersion;
     }
 }

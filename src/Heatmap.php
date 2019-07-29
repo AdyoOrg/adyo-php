@@ -11,7 +11,7 @@ class Heatmap extends ApiResource
      *
      * @var string
      */
-    const RESOURCE_PATH = 'analytics/heatmap';
+    const RESOURCE_PATH = 'heatmap';
 
     /**
      * Get heatmap with specific params
@@ -21,7 +21,7 @@ class Heatmap extends ApiResource
      */
     public static function get($body = null)
     {   
-        $responseBody = self::_staticPost(Heatmap::RESOURCE_PATH, null, $body, false);
+        $responseBody = self::_staticPost(Heatmap::RESOURCE_PATH, null, $body, false, true);
 
         // Map response
         return self::mapResult($responseBody);   
