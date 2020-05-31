@@ -30,14 +30,14 @@ class Adyo {
      *
      * @var string
      */
-    public static $apiBase = 'https://api.adyo.co.za';
+    public static $apiBase = 'http://api.adyo.co.za';
 
     /**
      * The base URL for the Adyo Analytics API.
      *
      * @var string
      */
-    public static $analyticsApiBase = 'https://analytics.adyo.co.za';
+    public static $analyticsApiBase = 'http://analytics.adyo.co.za';
 
     /**
      * Set the API key to be used for requests.
